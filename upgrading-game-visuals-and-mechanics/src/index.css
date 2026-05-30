@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #070B14;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0e1a; }
+::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 3px; }
+
+@keyframes legendaryPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(234,179,8,0.4), 0 4px 30px rgba(0,0,0,0.6); }
+  50% { box-shadow: 0 0 50px rgba(234,179,8,0.7), 0 4px 30px rgba(0,0,0,0.6); }
+}
+
+@keyframes lowHpFlash {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+@keyframes bossSlideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes stackGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.text-standoff {
+  text-shadow: 0 0 20px rgba(220, 38, 38, 0.8), 0 0 40px rgba(220, 38, 38, 0.4);
+}
+
+canvas {
+  cursor: none !important;
+}
+
+.stack-badge {
+  animation: stackGlow 1.5s ease-in-out infinite;
+}
